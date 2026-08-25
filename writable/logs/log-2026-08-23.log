@@ -1,0 +1,164 @@
+ERROR - 2026-08-23 15:00:51 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\draft\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\draft\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\draft\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 C:\xampp\htdocs\draft\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 C:\xampp\htdocs\draft\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 C:\xampp\htdocs\draft\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 C:\xampp\htdocs\draft\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 C:\xampp\htdocs\draft\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\draft\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\draft\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 C:\xampp\htdocs\draft\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\xampp\htdocs\draft\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\xampp\htdocs\draft\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 C:\xampp\htdocs\draft\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\xampp\htdocs\draft\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-08-23 15:04:39 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\draft\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\draft\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\draft\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 C:\xampp\htdocs\draft\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 C:\xampp\htdocs\draft\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 C:\xampp\htdocs\draft\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 C:\xampp\htdocs\draft\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 C:\xampp\htdocs\draft\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\draft\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\draft\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 C:\xampp\htdocs\draft\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\xampp\htdocs\draft\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\xampp\htdocs\draft\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 C:\xampp\htdocs\draft\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\xampp\htdocs\draft\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-08-23 15:07:53 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\draft\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\draft\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), 'database', 3306, '', 0)
+#1 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\draft\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 C:\xampp\htdocs\draft\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 C:\xampp\htdocs\draft\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 C:\xampp\htdocs\draft\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 C:\xampp\htdocs\draft\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 C:\xampp\htdocs\draft\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\draft\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\draft\system\Database\BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\xampp\htdocs\draft\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\draft\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 C:\xampp\htdocs\draft\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 C:\xampp\htdocs\draft\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\xampp\htdocs\draft\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\xampp\htdocs\draft\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 C:\xampp\htdocs\draft\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\xampp\htdocs\draft\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-08-23 17:25:35 --> ErrorException: Undefined array key "payment_status"
+[Method: GET, Route: admin]
+in APPPATH\Views\admin\dashboard.php on line 144.
+ 1 APPPATH\Views\admin\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "payment_status"', 'C:\\xampp\\htdocs\\draft\\app\\Views\\admin\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(240): include('C:\\xampp\\htdocs\\draft\\app\\Views\\admin\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1254): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(148): view('admin/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-08-23 17:25:41 --> ErrorException: Undefined array key "payment_status"
+[Method: GET, Route: admin]
+in APPPATH\Views\admin\dashboard.php on line 144.
+ 1 APPPATH\Views\admin\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "payment_status"', 'C:\\xampp\\htdocs\\draft\\app\\Views\\admin\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(240): include('C:\\xampp\\htdocs\\draft\\app\\Views\\admin\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1254): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(148): view('admin/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-08-23 17:25:42 --> ErrorException: Undefined array key "payment_status"
+[Method: GET, Route: admin]
+in APPPATH\Views\admin\dashboard.php on line 144.
+ 1 APPPATH\Views\admin\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "payment_status"', 'C:\\xampp\\htdocs\\draft\\app\\Views\\admin\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(240): include('C:\\xampp\\htdocs\\draft\\app\\Views\\admin\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1254): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(148): view('admin/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-08-23 17:25:47 --> ErrorException: Undefined array key "payment_status"
+[Method: GET, Route: admin]
+in APPPATH\Views\admin\dashboard.php on line 144.
+ 1 APPPATH\Views\admin\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "payment_status"', 'C:\\xampp\\htdocs\\draft\\app\\Views\\admin\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(240): include('C:\\xampp\\htdocs\\draft\\app\\Views\\admin\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1254): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(148): view('admin/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

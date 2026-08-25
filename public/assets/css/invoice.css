@@ -1,0 +1,24 @@
+.invoice-item-row {
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.invoice-item-row strong {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.invoice-total {
+    font-size: 1rem;
+    padding-top: 14px;
+}
+
+.invoice-total strong {
+    color: var(--green);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+}
