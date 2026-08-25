@@ -146,14 +146,16 @@ foreach ($orders as $order) {
                 <table class="table dashboard-orders-table align-middle">
                     <thead>
                         <tr>
-                            <th>Invoice</th>
-                            <th>Client</th>
-                            <th>Order<br><small class="text-muted">View order</small></th>
-                            <th>Total</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Qty</th>
+                            <th>Cost</th>
+                            <th>Marked-up Price</th>
+                            <th>Downpayment</th>
+                            <th>Balance</th>
+                            <th>Expected</th>
                             <th>Status</th>
-                            <th>Payment</th>
-                            <th>Update</th>
-                            <th>Action</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <?php if (! $ordersByClient): ?>
@@ -182,11 +184,18 @@ foreach ($orders as $order) {
                                 </td>
                             </tr>
                         <?php foreach ($clientOrders as $order): ?>
+                            <?php
+                                $items = json_decode($order['items'] ?? '[]', true) ?: [];
+                                $firstItem = $items[0] ?? ['name' => $order['order_details'] ?? 'No item', 'price' => (float) ($order['total_amount'] ?? 0)];
+                                $qty = max(1, (int) ($order['quantity'] ?? $order['qty'] ?? 1));
+                                $cost = (float) ($firstItem['price'] ?? ($order['total_amount'] ?? 0));
+                                $markedUpPrice = (float) ($order['total_amount'] ?? $cost);
+                                $paymentStatus = $order['payment_status'] ?? 'Downpayment';
+                                $downpayment = $paymentStatus === 'Full payment' ? $markedUpPrice : ($paymentStatus === 'Not paid' ? 0 : max(0, $markedUpPrice * 0.1));
+                                $balance = max(0, $markedUpPrice - $downpayment);
+                                $expectedDate = ! empty($order['expected_date']) ? date('M j, Y', strtotime($order['expected_date'])) : date('M j, Y', strtotime($order['created_at']));
+                            ?>
                             <tr class="order-row" data-search="<?= esc($order['invoice_number'] . '|' . $order['client_name'] . '|' . ($order['username'] ?? '') . '|' . $order['client_phone'], 'attr') ?>" data-status="<?= esc($order['status'], 'attr') ?>">
-                                <td>
-                                    <strong class="order-invoice"><?= esc($order['invoice_number']) ?></strong>
-                                    <small class="order-date"><?= esc(date('M j, Y', strtotime($order['created_at']))) ?></small>
-                                </td>
                                 <td>
                                     <strong class="order-client-name"><?= esc($order['client_name']) ?></strong>
                                     <?php if (($order['username'] ?? '') !== ''): ?>
@@ -194,37 +203,22 @@ foreach ($orders as $order) {
                                     <?php endif; ?>
                                     <small><?= esc($order['client_phone']) ?></small>
                                 </td>
-                                <td class="order-detail">
-                                    <a class="btn btn-sm btn-order-view" href="<?= base_url('admin/client-orders?' . http_build_query(['username' => $order['username'] ?? ''])) ?>">
-                                        View details <span aria-hidden="true">&rarr;</span>
-                                    </a>
+                                <td>
+                                    <strong class="order-product-name"><?= esc($firstItem['name']) ?></strong>
+                                    <?php if (! empty($order['order_details']) && $order['order_details'] !== $firstItem['name']): ?>
+                                        <small><?= esc($order['order_details']) ?></small>
+                                    <?php endif; ?>
                                 </td>
-                                <td>₱<?= number_format((float) $order['total_amount'], 2) ?></td>
+                                <td><?= $qty ?></td>
+                                <td>₱<?= number_format($cost, 2) ?></td>
+                                <td>₱<?= number_format($markedUpPrice, 2) ?></td>
+                                <td>₱<?= number_format($downpayment, 2) ?></td>
+                                <td>₱<?= number_format($balance, 2) ?></td>
+                                <td><?= esc($expectedDate) ?></td>
                                 <td>
                                     <span class="status status-<?= url_title(strtolower($order['status']), '-', true) ?>">
                                         <?= esc($order['status']) ?>
                                     </span>
-                                </td>
-                                <td>
-                                    <form method="post" action="<?= base_url('admin/orders/' . $order['id'] . '/payment-status') ?>">
-                                        <?= csrf_field() ?>
-                                        <select class="form-select form-select-sm order-select" name="payment_status" onchange="this.form.submit()" aria-label="Payment status">
-                                            <option value="Not paid" <?= ($order['payment_status'] ?? 'Downpayment') === 'Not paid' ? 'selected' : '' ?>>Not paid</option>
-                                            <option value="Downpayment" <?= ($order['payment_status'] ?? 'Downpayment') === 'Downpayment' ? 'selected' : '' ?>>Downpayment</option>
-                                            <option value="Full payment" <?= ($order['payment_status'] ?? '') === 'Full payment' ? 'selected' : '' ?>>Full payment</option>
-                                        </select>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form method="post" action="<?= base_url('admin/orders/' . $order['id'] . '/status') ?>">
-                                        <?= csrf_field() ?>
-                                        <select class="form-select form-select-sm order-select" name="status" onchange="this.form.submit()">
-                                            <option selected disabled>Change status</option>
-                                            <?php foreach (['Pending', 'On-hand', 'On the way', 'Delivered'] as $status): ?>
-                                                <option value="<?= $status ?>"><?= $status ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </form>
                                 </td>
                                 <td>
                                     <div class="order-actions">
